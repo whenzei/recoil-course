@@ -1,21 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import Canvas from './Canvas'
 import {ChakraProvider} from '@chakra-ui/react'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {RecoilRoot} from 'recoil';
+import App from './App'
 
 ReactDOM.render(
     <React.StrictMode>
-        <ChakraProvider>
-            <Router>
-                <Switch>
-                    <Route>
-                        <Canvas />
-                    </Route>
-                </Switch>
-            </Router>
-        </ChakraProvider>
+        <RecoilRoot>
+            <ChakraProvider>
+                <App/>
+            </ChakraProvider>
+        </RecoilRoot>
     </React.StrictMode>,
     document.getElementById('root'),
 )
